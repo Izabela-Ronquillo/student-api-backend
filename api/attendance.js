@@ -1,11 +1,7 @@
 const connectToDatabase = require('../db');
 const mongoose = require('mongoose');
 
-const AttendanceSchema = new mongoose.Schema({
-  studentName: String,
-  date: String,
-  status: String
-}, { timestamps: true, collection: 'daily_attendance' });
+const AttendanceSchema = new mongoose.Schema({}, { timestamps: true, collection: 'daily_attendance', strict: false });
 
 const Attendance = mongoose.models.Attendance || mongoose.model('Attendance', AttendanceSchema);
 
