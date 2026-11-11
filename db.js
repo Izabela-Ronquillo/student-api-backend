@@ -10,6 +10,7 @@ async function connectToDatabase() {
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(process.env.MONGODB_URI, {
+      dbName: process.env.MONGODB_DB || 'LabAttendanceDB',
       bufferCommands: false,
     });
   }

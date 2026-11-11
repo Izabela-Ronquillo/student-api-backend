@@ -1,8 +1,9 @@
 const connectToDatabase = require('../db');
 const mongoose = require('mongoose');
 
-const AttendanceSchema = new mongoose.Schema({}, { timestamps: true, collection: 'daily_attendance', strict: false });
-const Attendance = mongoose.models.Attendance || mongoose.model('Attendance', AttendanceSchema);
+const COLLECTION = 'Ronquillo.LabAttendance';
+const AttendanceSchema = new mongoose.Schema({}, { timestamps: true, collection: COLLECTION, strict: false });
+const Attendance = mongoose.models.RonquilloLabAttendance || mongoose.model('RonquilloLabAttendance', AttendanceSchema);
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true);
